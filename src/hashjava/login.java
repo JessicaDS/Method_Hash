@@ -203,8 +203,12 @@ public class login extends javax.swing.JFrame {
         // convertir a letras
         hash.substring(0, 10);
         int rou = Integer.parseInt(hash);
-        for (int w = 0; w <= hash.length() - 1; w++) {
-            cadena += cadena + abecedario[rou];
+        int dig = rou % 10, d1 = 0;
+        cadena += cadena + abecedario[dig];
+        for (int w = 0; w <= rou; w++) {
+            dig = rou / 10;
+             d1 = dig% 10;
+            cadena += cadena + abecedario[d1];
         }
         hash = cadena;
         System.out.println(hash + " Convertido a abecedario");
